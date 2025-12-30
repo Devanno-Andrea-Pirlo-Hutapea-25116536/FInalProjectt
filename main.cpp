@@ -126,10 +126,33 @@ void filmRating::mencariFilmRatingTertinggi() {
 
 //untuk menampilkan semua film yang ada 
 void filmRating::menampilkanSemuaFilm() {
-	cout << "Menampilkan Semua Film | Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	  system("cls");
+    cout << "==================================" << endl;
+    cout << " Menampilkan Semua Film | Film Rating  " << endl;
+    cout << "==================================" << endl;
+    cout << endl;
+    
+    if (daftarFilm == 0) {
+        cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
+    } else {
+        cout << "Daftar Semua Film:" << endl;
+        cout << endl;
+        
+        for (int i = 0; i < daftarFilm; i++) {
+            cout << "Film ke-" << (i + 1) << ":" << endl;
+            cout << "  Judul     : " << judulFilm[i] << endl;
+            cout << "  Genre     : " << genre[i] << endl;
+            cout << "  Tahun     : " << tahunRilis[i] << endl;
+            cout << endl;
+        }
+    }
+    
+    cout << endl;
+    cout << "Tekan Enter untuk kembali ke Main Menu...";
+    cin.ignore();
+    mainMenu();
 }
+
 
 void filmRating::klmpk() {
 	system("cls");
