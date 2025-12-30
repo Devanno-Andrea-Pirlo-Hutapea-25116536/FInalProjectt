@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -19,19 +20,18 @@ public:
 
 //tampilan main menu
 void filmRating::mainMenu() {
-	cout << "Main Menu - Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "Main Menu - Film Rating\n\n" << endl;
 
 	cout << "1. Input Film" << endl;
 	cout << "2. Rating Film" << endl;
 	cout << "3. Menghitung Rata - Rata" << endl;
 	cout << "4. Mencari Film Dengan Rating Tertinggi" << endl;
 	cout << "5. Menampilkan Semua Film " << endl;
+	cout << "6. yg bikin prgmny" << endl;
 	cout << "0. Exit" << endl;
 
 	do {
-		cout << "Pilih Menu: "; 
+		cout << "Pilih Menu: ";
 		cin >> pilihMenu;
 		cin.ignore();
 
@@ -47,7 +47,9 @@ void filmRating::mainMenu() {
 			break;
 		case 5: menampilkanSemuaFilm();
 			break;
-		case 0: exit(0);
+		case 6: klmpk();
+			break;
+		case 0: 
 			break;
 		default: {
 			cout << "pilih ulang" << endl;
@@ -58,12 +60,11 @@ void filmRating::mainMenu() {
 }
 
 //untuk input film = judul, genre, tahun rilis
-void filmRating::mainMenu() {
+void filmRating::inputFilm() {
 	system("cls");
 
-	cout << "Input Film | Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "Input Film | Film Rating\n\n" << endl;
+
 	if (daftarFilm < 49) {
 		cout << "Input Data ke-" << (daftarFilm + 1) << endl;
 		cout << "Judul Film: ";
@@ -80,11 +81,11 @@ void filmRating::mainMenu() {
 	}
 
 
-		cout << "Kembali ke Main Menu atau Exit Program" << endl;
+	cout << "Kembali ke Main Menu atau Exit Program" << endl;
 
-		cout << "1. Main Menu" << endl;
-		cout << "2. Input Film lagi" << endl;
-		cout << "0. Exit" << endl;
+	cout << "1. Main Menu" << endl;
+	cout << "2. Input Film lagi" << endl;
+	cout << "0. Exit" << endl;
 	do {
 		cout << "Pilih Menu: ";
 		cin >> pilihMenu;
@@ -96,14 +97,10 @@ void filmRating::mainMenu() {
 			break;
 		case 2: inputFilm();
 			break;
-		case 0: exit(0);
+		case 0:
 			break;
-		default: {
-			cout << "pilih ulang" << endl;
 		}
-
-		}
-	} while (pilihMenu = 0);
+	} while (pilihMenu != 0);
 }
 
 //untunk memberi rating film yang ada
@@ -115,7 +112,7 @@ void filmRating::ratingFilm() {
 
 //untuk menghitung rata - rata rating suatu film
 void filmRating::menghitungRataRata() {
-	cout << "Menghitung Rata - Rata | Film Rating" << endl;
+	cout << "Menghitung Rata - Rata Rating | Film Rating" << endl;
 	cout << endl;
 	cout << endl;
 }
@@ -136,19 +133,15 @@ void filmRating::menampilkanSemuaFilm() {
 
 void filmRating::klmpk() {
 	system("cls");
-	cout << "		Data Kelompok 6" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "		Data Kelompok 6\n\n" << endl;
 
 
 	cout << "Anggota Kelompok 6:" << endl;
-	cout << "1. Iqbal Izzudin" << endl;
-	cout << "2. Devanno Andrea Pirlo Hutapea" << endl;
-	cout << "3. Muhammad Azka Wahid Abdillah" << endl;
-	cout << "4. Humaid Hammami" << endl;
-	cout << "5. Chasnaunisai Khoirivayanti" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "1. Iqbal Izzudin - Menampilkan Semua Film" << endl;
+	cout << "2. Devanno Andrea Pirlo Hutapea - Main Menu, Input Film" << endl;
+	cout << "3. Muhammad Azka Wahid Abdillah - Mencari Film Dengan Rating Tertinggi" << endl;
+	cout << "4. Humaid Hammami - Menghitung Rata - Rata Rating" << endl;
+	cout << "5. Chasnaunisai Khoirivayanti - Rating Film\n" << endl;
 
 	do
 	{
