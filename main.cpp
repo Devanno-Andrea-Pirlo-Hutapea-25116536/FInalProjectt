@@ -74,6 +74,7 @@ void filmRating::inputFilm() {
 		getline(cin, genre[daftarFilm]);
 		cout << "Tahun Rilis: ";
 		getline(cin, tahunRilis[daftarFilm]);
+		nilaiRating[daftarFilm] = 0;
 		daftarFilm++;
 		cout << "\nInput Film Tersimpan\n" << endl;
 	}
@@ -132,6 +133,7 @@ void filmRating::ratingFilm() {
 		cout << "Masukkan rating untuk \"" << judulFilm[pilihFilm - 1] << "\" (1-10): ";
 		cin >> rating;
 		cin.ignore();
+		nilaiRating[pilihFilm - 1] = rating;
 		if (rating < 1 || rating > 10) {
 			cout << "Rating tidak valid. Kembali ke Main Menu." << endl;
 			mainMenu();
@@ -165,9 +167,30 @@ void filmRating::ratingFilm() {
 
 //untuk menghitung rata - rata rating suatu film
 void filmRating::menghitungRataRata() {
-	cout << "Menghitung Rata - Rata Rating | Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	system("cls");
+	cout << "==================================" << endl;
+	cout << " Menghitung Rata-Rata | Film Rating" << endl;
+	cout << "==================================" << endl;
+
+	if (daftarFilm == 0) {
+		cout << "Belum ada film yang diinput!" << endl;
+	}
+	else {
+		float total = 0;
+
+		for (int i = 0; i < daftarFilm; i++) {
+			total += nilaiRating[i];
+		}
+
+		float rataRata = total / daftarFilm;
+
+		cout << "Total Film Terdaftar : " << daftarFilm << endl;
+		cout << "Rata-Rata Rating     : " << rataRata << endl;
+	}
+
+	cout << "\nTekan Enter untuk kembali ke Main Menu...";
+	cin.get(); 
+	mainMenu();
 }
 
 //untuk mencari film dgn rating tertinggi
