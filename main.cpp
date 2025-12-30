@@ -20,6 +20,7 @@ public:
 
 //tampilan main menu
 void filmRating::mainMenu() {
+	system("cls");
 	cout << "Main Menu - Film Rating\n\n" << endl;
 
 	cout << "1. Input Film" << endl;
