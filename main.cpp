@@ -7,6 +7,7 @@ class filmRating {
 private:
 	int daftarFilm = 0, pilihMenu;
 	string judulFilm[50], genre[50], tahunRilis[50];
+    float nilaiRating[50];
 public:
 	void mainMenu();
 	void inputFilm();
