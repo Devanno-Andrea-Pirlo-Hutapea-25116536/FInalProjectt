@@ -133,7 +133,7 @@ void filmRating::menampilkanSemuaFilm() {
 
 void filmRating::klmpk() {
 	system("cls");
-	cout << "		Data Kelompok 6\n\n" << endl;
+	cout << "Data Kelompok 6 | Film Rating\n\n" << endl;
 
 
 	cout << "Anggota Kelompok 6:" << endl;
