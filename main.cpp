@@ -106,9 +106,61 @@ void filmRating::inputFilm() {
 
 //untunk memberi rating film yang ada
 void filmRating::ratingFilm() {
+	system("cls");
+	cout << "==================================" << endl;
 	cout << "Rating Film | Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "==================================" << endl;
+
+	if (daftarFilm == 0) {
+		cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
+	}
+	else {
+		cout << "Daftar Film yang Tersedia untuk Diberi Rating:" << endl;
+		cout << endl;
+		for (int i = 0; i < daftarFilm; i++) {
+			cout << i + 1 << ". " << judulFilm[i] << " (" << tahunRilis[i] << ") - Genre: " << genre[i] << endl;
+		}
+		int pilihFilm;
+		cout << "\nPilih film yang ingin diberi rating (1-" << daftarFilm << "): ";
+		cin >> pilihFilm;
+		cin.ignore();
+		if (pilihFilm < 1 || pilihFilm > daftarFilm) {
+			cout << "Pilihan tidak valid. Kembali ke Main Menu." << endl;
+			mainMenu();
+		}
+		int rating;
+		cout << "Masukkan rating untuk \"" << judulFilm[pilihFilm - 1] << "\" (1-10): ";
+		cin >> rating;
+		cin.ignore();
+		if (rating < 1 || rating > 10) {
+			cout << "Rating tidak valid. Kembali ke Main Menu." << endl;
+			mainMenu();
+		}
+		cout << "\nRating " << rating << " telah diberikan untuk \"" << judulFilm[pilihFilm - 1] << "\".\n" << endl;
+	}
+	cout << "Kembali ke Main Menu atau Exit Program" << endl;
+
+	cout << "1. Main Menu" << endl;
+	cout << "2. Input Film lagi" << endl;
+	cout << "3. Rating Film lagi" << endl;
+	cout << "0. Exit" << endl;
+	do {
+		cout << "Pilih Menu: ";
+		cin >> pilihMenu;
+		cin.ignore();
+
+		switch (pilihMenu)
+		{
+		case 1: mainMenu();
+			break;
+		case 2: inputFilm();
+			break;
+		case 3: ratingFilm();
+			break;
+		case 0:
+			break;
+		}
+	} while (pilihMenu != 0);
 }
 
 //untuk menghitung rata - rata rating suatu film
