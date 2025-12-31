@@ -78,8 +78,7 @@ void filmRating::inputFilm() {
 		nilaiRating[daftarFilm] = 0;
 		daftarFilm++;
 		cout << "\nInput Film Tersimpan\n" << endl;
-	}
-	else {
+	} else {
 		cout << "Memori Penuhhhh!" << endl;
 	}
 
@@ -115,8 +114,7 @@ void filmRating::ratingFilm() {
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
-	}
-	else {
+	} else {
 		cout << "Daftar Film yang Tersedia untuk Diberi Rating:" << endl;
 		cout << endl;
 		for (int i = 0; i < daftarFilm; i++) {
@@ -175,8 +173,7 @@ void filmRating::menghitungRataRata() {
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput!" << endl;
-	}
-	else {
+	} else {
 		float total = 0;
 
 		for (int i = 0; i < daftarFilm; i++) {
@@ -189,16 +186,43 @@ void filmRating::menghitungRataRata() {
 		cout << "Rata-Rata Rating     : " << rataRata << endl;
 	}
 
-	cout << "\nTekan Enter untuk kembali ke Main Menu...";
+	cout << "Tekan Enter untuk kembali ke Main Menu...";
 	cin.get(); 
 	mainMenu();
 }
 
 //untuk mencari film dgn rating tertinggi
 void filmRating::mencariFilmRatingTertinggi() {
+	system("cls");
+	cout << "==================================" << endl;
 	cout << "Mencari Film Dengan Rating Tertinggi | Film Rating" << endl;
-	cout << endl;
-	cout << endl;
+	cout << "==================================" << endl;
+
+	if (daftarFilm == 0) {
+		cout << "Belum ada film yang diinput" << endl;
+	} else {
+		float maxRating = -1;
+        int index = -1;
+
+        for (int i = 0; i < daftarFilm; i++) {
+        if (nilaiRating[i] > maxRating) {
+            maxRating = nilaiRating[i];
+            index = i;
+        }
+    }
+
+        if (index != -1) {
+            cout << "Judul: " << judulFilm[index] << endl;
+            cout << "Genre: " << genre[index] << endl;
+            cout << "Tahun: " << tahunRilis[index] << endl;
+            cout << "Rating: " << maxRating << endl;
+		    cout << endl;
+       }
+	}
+	
+	cout << "Tekan Enter untuk kembali ke Main Menu...";
+    cin.get();
+    mainMenu();
 }
 
 //untuk menampilkan semua film yang ada 
