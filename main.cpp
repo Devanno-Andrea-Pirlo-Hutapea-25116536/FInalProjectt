@@ -21,8 +21,10 @@ public:
 //tampilan main menu
 void filmRating::mainMenu() {
 	system("cls");
-	cout << "Main Menu - Film Rating\n\n" << endl;
-
+    cout << "=======================" << endl;
+	cout << "Main Menu - Film Rating" << endl;
+    cout << "=======================\n" << endl;
+	
 	cout << "1. Input Film" << endl;
 	cout << "2. Rating Film" << endl;
 	cout << "3. Menghitung Rata - Rata" << endl;
@@ -63,11 +65,11 @@ void filmRating::mainMenu() {
 //untuk input film = judul, genre, tahun rilis
 void filmRating::inputFilm() {
 	system("cls");
-    cout << "==================================" << endl;
+    cout << "========================" << endl;
     cout << "Input Film | Film Rating" << endl;
-    cout << "==================================" << endl;
+    cout << "========================" << endl;
 
-	if (daftarFilm < 49) {
+	if (daftarFilm < 50) {
 		cout << "Input Data ke-" << (daftarFilm + 1) << endl;
 		cout << "Judul Film: ";
 		getline(cin, judulFilm[daftarFilm]);
@@ -108,9 +110,9 @@ void filmRating::inputFilm() {
 //untunk memberi rating film yang ada
 void filmRating::ratingFilm() {
 	system("cls");
-	cout << "==================================" << endl;
+	cout << "=========================" << endl;
 	cout << "Rating Film | Film Rating" << endl;
-	cout << "==================================" << endl;
+	cout << "=========================" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
@@ -167,9 +169,9 @@ void filmRating::ratingFilm() {
 //untuk menghitung rata - rata rating suatu film
 void filmRating::menghitungRataRata() {
 	system("cls");
-	cout << "==================================" << endl;
+	cout << "===================================" << endl;
 	cout << " Menghitung Rata-Rata | Film Rating" << endl;
-	cout << "==================================" << endl;
+	cout << "===================================" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput!" << endl;
@@ -194,9 +196,9 @@ void filmRating::menghitungRataRata() {
 //untuk mencari film dgn rating tertinggi
 void filmRating::mencariFilmRatingTertinggi() {
 	system("cls");
-	cout << "==================================" << endl;
+	cout << "==================================================" << endl;
 	cout << "Mencari Film Dengan Rating Tertinggi | Film Rating" << endl;
-	cout << "==================================" << endl;
+	cout << "==================================================" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput" << endl;
@@ -228,9 +230,9 @@ void filmRating::mencariFilmRatingTertinggi() {
 //untuk menampilkan semua film yang ada 
 void filmRating::menampilkanSemuaFilm() {
 	  system("cls");
-    cout << "==================================" << endl;
-    cout << " Menampilkan Semua Film | Film Rating  " << endl;
-    cout << "==================================" << endl;
+    cout << "====================================" << endl;
+    cout << "Menampilkan Semua Film | Film Rating" << endl;
+    cout << "====================================" << endl;
     cout << endl;
     
     if (daftarFilm == 0) {
@@ -257,8 +259,9 @@ void filmRating::menampilkanSemuaFilm() {
 
 void filmRating::klmpk() {
 	system("cls");
-	cout << "		Data Kelompok 6\n\n" << endl;
-
+	cout << "===============" << endl;
+	cout << "Data Kelompok 6" << endl;
+    cout << "===============\n" << endl;
 
 	cout << "Anggota Kelompok 6:" << endl;
 	cout << "1. Iqbal Izzudin - Menampilkan Semua Film" << endl;
