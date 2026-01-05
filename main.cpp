@@ -64,47 +64,50 @@ void filmRating::mainMenu() {
 
 //untuk input film = judul, genre, tahun rilis
 void filmRating::inputFilm() {
-	system("cls");
-    cout << "========================" << endl;
-    cout << "Input Film | Film Rating" << endl;
-    cout << "========================" << endl;
+  system("cls");
+  cout << "========================" << endl;
+  cout << "Input Film | Film Rating" << endl;
+  cout << "========================\n" << endl;
 
-	if (daftarFilm < 50) {
-		cout << "Input Data ke-" << (daftarFilm + 1) << endl;
-		cout << "Judul Film: ";
-		getline(cin, judulFilm[daftarFilm]);
-		cout << "Genre: ";
-		getline(cin, genre[daftarFilm]);
-		cout << "Tahun Rilis: ";
-		getline(cin, tahunRilis[daftarFilm]);
-		nilaiRating[daftarFilm] = 0;
-		daftarFilm++;
-		cout << "\nInput Film Tersimpan\n" << endl;
-	} else {
-		cout << "Memori Penuhhhh!" << endl;
-	}
+  if (daftarFilm < 50) {
+    cout << "Input Data ke-" << (daftarFilm + 1) << endl;
+    cout << "Judul Film: ";
+    getline(cin, judulFilm[daftarFilm]);
+    cout << "Genre: ";
+    getline(cin, genre[daftarFilm]);
+    cout << "Tahun Rilis: ";
+    getline(cin, tahunRilis[daftarFilm]);
+    nilaiRating[daftarFilm] = 0;
+    daftarFilm++;
+    cout << "\nInput Film Tersimpan" << endl;
+  } else {
+    cout << "Memori Penuhhhh!" << endl;
+  }
 
+  while (pilihMenu != 0) {
+    cout << "\n1. Input Film lagi" << endl;
+    cout << "2. Rating Film" << endl;
+    cout << "3. Kembali ke Main Menu" << endl;
+    cout << "0. Exit Program" << endl;
 
-	cout << "Kembali ke Main Menu atau Exit Program" << endl;
+    cout << "Pilih Menu: ";
+    cin >> pilihMenu;
+    cin.ignore();
 
-	cout << "1. Main Menu" << endl;
-	cout << "2. Input Film lagi" << endl;
-	cout << "0. Exit" << endl;
-	do {
-		cout << "Pilih Menu: ";
-		cin >> pilihMenu;
-		cin.ignore();
-
-		switch (pilihMenu)
-		{
-		case 1: mainMenu();
-			break;
-		case 2: inputFilm();
-			break;
-		case 0:
-			break;
-		}
-	} while (pilihMenu != 0);
+    switch (pilihMenu) {
+      case 1:
+        inputFilm();
+        break;
+      case 2:
+          ratingFilm();
+          break;
+      case 3:
+          mainMenu();
+        break;
+      case 0:
+        break;
+    }
+  }
 }
 
 //untunk memberi rating film yang ada
