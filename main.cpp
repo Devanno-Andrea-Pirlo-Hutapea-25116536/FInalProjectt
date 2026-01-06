@@ -7,7 +7,7 @@ class filmRating {
 private:
 	int daftarFilm = 0, pilihMenu;
 	string judulFilm[50], genre[50], tahunRilis[50];
-    float nilaiRating[50];
+	float nilaiRating[50];
 public:
 	void mainMenu();
 	void inputFilm();
@@ -21,10 +21,10 @@ public:
 //tampilan main menu
 void filmRating::mainMenu() {
 	system("cls");
-    cout << "=======================" << endl;
+	cout << "=======================" << endl;
 	cout << "Main Menu - Film Rating" << endl;
-    cout << "=======================\n" << endl;
-	
+	cout << "=======================\n" << endl;
+
 	cout << "1. Input Film" << endl;
 	cout << "2. Rating Film" << endl;
 	cout << "3. Menghitung Rata - Rata" << endl;
@@ -52,7 +52,7 @@ void filmRating::mainMenu() {
 			break;
 		case 6: klmpk();
 			break;
-		case 0: 
+		case 0:
 			break;
 		default: {
 			cout << "pilih ulang" << endl;
@@ -64,50 +64,51 @@ void filmRating::mainMenu() {
 
 //untuk input film = judul, genre, tahun rilis
 void filmRating::inputFilm() {
-  system("cls");
-  cout << "========================" << endl;
-  cout << "Input Film | Film Rating" << endl;
-  cout << "========================\n" << endl;
+	system("cls");
+	cout << "========================" << endl;
+	cout << "Input Film | Film Rating" << endl;
+	cout << "========================\n" << endl;
 
-  if (daftarFilm < 50) {
-    cout << "Input Data ke-" << (daftarFilm + 1) << endl;
-    cout << "Judul Film: ";
-    getline(cin, judulFilm[daftarFilm]);
-    cout << "Genre: ";
-    getline(cin, genre[daftarFilm]);
-    cout << "Tahun Rilis: ";
-    getline(cin, tahunRilis[daftarFilm]);
-    nilaiRating[daftarFilm] = 0;
-    daftarFilm++;
-    cout << "\nInput Film Tersimpan" << endl;
-  } else {
-    cout << "Memori Penuhhhh!" << endl;
-  }
+	if (daftarFilm < 50) {
+		cout << "Input Data ke-" << (daftarFilm + 1) << endl;
+		cout << "Judul Film: ";
+		getline(cin, judulFilm[daftarFilm]);
+		cout << "Genre: ";
+		getline(cin, genre[daftarFilm]);
+		cout << "Tahun Rilis: ";
+		getline(cin, tahunRilis[daftarFilm]);
+		nilaiRating[daftarFilm] = 0;
+		daftarFilm++;
+		cout << "\nInput Film Tersimpan" << endl;
+	}
+	else {
+		cout << "Memori Penuhhhh!" << endl;
+	}
 
-  while (pilihMenu != 0) {
-    cout << "\n1. Input Film lagi" << endl;
-    cout << "2. Rating Film" << endl;
-    cout << "3. Kembali ke Main Menu" << endl;
-    cout << "0. Exit Program" << endl;
+	while (pilihMenu != 0) {
+		cout << "\n1. Input Film lagi" << endl;
+		cout << "2. Rating Film" << endl;
+		cout << "3. Kembali ke Main Menu" << endl;
+		cout << "0. Exit Program" << endl;
 
-    cout << "Pilih Menu: ";
-    cin >> pilihMenu;
-    cin.ignore();
+		cout << "Pilih Menu: ";
+		cin >> pilihMenu;
+		cin.ignore();
 
-    switch (pilihMenu) {
-      case 1:
-        inputFilm();
-        break;
-      case 2:
-          ratingFilm();
-          break;
-      case 3:
-          mainMenu();
-        break;
-      case 0:
-        break;
-    }
-  }
+		switch (pilihMenu) {
+		case 1:
+			inputFilm();
+			break;
+		case 2:
+			ratingFilm();
+			break;
+		case 3:
+			mainMenu();
+			break;
+		case 0:
+			break;
+		}
+	}
 }
 
 //untunk memberi rating film yang ada
@@ -115,11 +116,12 @@ void filmRating::ratingFilm() {
 	system("cls");
 	cout << "=========================" << endl;
 	cout << "Rating Film | Film Rating" << endl;
-	cout << "=========================" << endl;
+	cout << "=========================\n" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
-	} else {
+	}
+	else {
 		cout << "Daftar Film yang Tersedia untuk Diberi Rating:" << endl;
 		cout << endl;
 		for (int i = 0; i < daftarFilm; i++) {
@@ -174,11 +176,12 @@ void filmRating::menghitungRataRata() {
 	system("cls");
 	cout << "==================================" << endl;
 	cout << "Menghitung Rata-Rata | Film Rating" << endl;
-	cout << "==================================" << endl;
+	cout << "==================================\n" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput!" << endl;
-	} else {
+	}
+	else {
 		float total = 0;
 
 		for (int i = 0; i < daftarFilm; i++) {
@@ -192,7 +195,7 @@ void filmRating::menghitungRataRata() {
 	}
 
 	cout << "Tekan Enter untuk kembali ke Main Menu...";
-	cin.get(); 
+	cin.get();
 	mainMenu();
 }
 
@@ -201,62 +204,63 @@ void filmRating::mencariFilmRatingTertinggi() {
 	system("cls");
 	cout << "==================================================" << endl;
 	cout << "Mencari Film Dengan Rating Tertinggi | Film Rating" << endl;
-	cout << "==================================================" << endl;
+	cout << "==================================================\n" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput" << endl;
-	} else {
-		float maxRating = -1;
-        int index = -1;
-
-        for (int i = 0; i < daftarFilm; i++) {
-        if (nilaiRating[i] > maxRating) {
-            maxRating = nilaiRating[i];
-            index = i;
-        }
-    }
-
-        if (index != -1) {
-            cout << "Judul: " << judulFilm[index] << endl;
-            cout << "Genre: " << genre[index] << endl;
-            cout << "Tahun: " << tahunRilis[index] << endl;
-            cout << "Rating: " << maxRating << endl;
-		    cout << endl;
-       }
 	}
-	
+	else {
+		float maxRating = -1;
+		int index = -1;
+
+		for (int i = 0; i < daftarFilm; i++) {
+			if (nilaiRating[i] > maxRating) {
+				maxRating = nilaiRating[i];
+				index = i;
+			}
+		}
+
+		if (index != -1) {
+			cout << "Judul: " << judulFilm[index] << endl;
+			cout << "Genre: " << genre[index] << endl;
+			cout << "Tahun: " << tahunRilis[index] << endl;
+			cout << "Rating: " << maxRating << endl;
+			cout << endl;
+		}
+	}
+
 	cout << "Tekan Enter untuk kembali ke Main Menu...";
-    cin.get();
-    mainMenu();
+	cin.get();
+	mainMenu();
 }
 
 //untuk menampilkan semua film yang ada 
 void filmRating::menampilkanSemuaFilm() {
-	  system("cls");
-    cout << "====================================" << endl;
-    cout << "Menampilkan Semua Film | Film Rating" << endl;
-    cout << "====================================" << endl;
-    cout << endl;
-    
-    if (daftarFilm == 0) {
-        cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
-    } else {
-        cout << "Daftar Semua Film:" << endl;
-        cout << endl;
-        
-        for (int i = 0; i < daftarFilm; i++) {
-            cout << "Film ke-" << (i + 1) << ":" << endl;
-            cout << "  Judul     : " << judulFilm[i] << endl;
-            cout << "  Genre     : " << genre[i] << endl;
-            cout << "  Tahun     : " << tahunRilis[i] << endl;
-            cout << endl;
-        }
-    }
-    
-    cout << endl;
-    cout << "Tekan Enter untuk kembali ke Main Menu...";
-    cin.ignore();
-    mainMenu();
+	system("cls");
+	cout << "====================================" << endl;
+	cout << "Menampilkan Semua Film | Film Rating" << endl;
+	cout << "====================================\n" << endl;
+
+	if (daftarFilm == 0) {
+		cout << "Belum ada film yang diinput. Silakan input film terlebih dahulu." << endl;
+	}
+	else {
+		cout << "Daftar Semua Film:" << endl;
+		cout << endl;
+
+		for (int i = 0; i < daftarFilm; i++) {
+			cout << "Film ke-" << (i + 1) << ":" << endl;
+			cout << "  Judul     : " << judulFilm[i] << endl;
+			cout << "  Genre     : " << genre[i] << endl;
+			cout << "  Tahun     : " << tahunRilis[i] << endl;
+			cout << endl;
+		}
+	}
+
+	cout << endl;
+	cout << "Tekan Enter untuk kembali ke Main Menu...";
+	cin.ignore();
+	mainMenu();
 }
 
 
@@ -264,7 +268,7 @@ void filmRating::klmpk() {
 	system("cls");
 	cout << "===============" << endl;
 	cout << "Data Kelompok 6" << endl;
- cout << "===============\n" << endl;
+	cout << "===============\n" << endl;
 
 	cout << "Anggota Kelompok 6:" << endl;
 	cout << "1. Iqbal Izzudin - Menampilkan Semua Film" << endl;
