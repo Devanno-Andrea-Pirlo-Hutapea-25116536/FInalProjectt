@@ -172,9 +172,9 @@ void filmRating::ratingFilm() {
 //untuk menghitung rata - rata rating suatu film
 void filmRating::menghitungRataRata() {
 	system("cls");
-	cout << "===================================" << endl;
-	cout << " Menghitung Rata-Rata | Film Rating" << endl;
-	cout << "===================================" << endl;
+	cout << "==================================" << endl;
+	cout << "Menghitung Rata-Rata | Film Rating" << endl;
+	cout << "==================================" << endl;
 
 	if (daftarFilm == 0) {
 		cout << "Belum ada film yang diinput!" << endl;
@@ -264,7 +264,7 @@ void filmRating::klmpk() {
 	system("cls");
 	cout << "===============" << endl;
 	cout << "Data Kelompok 6" << endl;
-    cout << "===============\n" << endl;
+ cout << "===============\n" << endl;
 
 	cout << "Anggota Kelompok 6:" << endl;
 	cout << "1. Iqbal Izzudin - Menampilkan Semua Film" << endl;
